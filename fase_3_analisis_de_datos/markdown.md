@@ -197,12 +197,21 @@ Para comprender mejor la observación de las gráficas estadísticas hemos clasi
 Podemos formular algunas hipótesis y pensar en las relaciones esenciales a analizar para llegar a conclusiones interesantes. Aquí te presento algunas hipótesis y las mejores gráficas para explorarlas:
 
   **Posibles Hipótesis y Relaciones Esenciales a Analizar:**
+  
 
 ## Hipótesis 1 sobre la cafeína:
 Los estudios realizados han mostrado que el consumo moderado de café está asociado con un menor riesgo de deterioro cognitivo, osteoporosis, diabetes y enfermedades neurodegenerativas como el Alzheimer y el Parkinson. La cafeína, como principal compuesto activo del café, parece tener un efecto protector sobre la memoria y la atención.
     El consumo de café podría estar relacionado con la salud, por ejemplo, la pérdida de demencia es menor en personas que han tenido una ingesta moderada y regular. También se ha desprendido del estudio que un exceso en la ingesta de esta bebida tiene consecuencias negativas para la salud. El café en una medida razonable tiene efectos antioxidantes e inflamatorios para ayudar a proteger nuestro cerebro.
     Fuente 2: https://www.sabervivirtv.com/nutricion/cuanta-cafeina-tiene-un-cafe-depende-de-como-lo-prepares_11344
     "Las ingestas de cafeína de hasta 400 mg al día […] no tienen efectos perjudiciales para la salud de los adultos en la población general, excepto en el caso de las embarazadas". Para estas últimas, el tope está en 200 mg diarios. Una taza de cafetera italiana contiene entorno a 70 miligramos de cafeína.
+
+
+    - Resultados:
+    Tras relacionar los factores cognitivos y el consumo de cafeína hemos podido observar que cuando los resultados de la prueba cognitiva son bajos en promedio el nivel de cafeina de los participantes alcanza casi los 450 mg, lo que serían 6 tazas y media de café diarias. Sin embargo cuando el consumo de cafeína va bajando, observamos que el rendimiento cognitivo va aumentando.
+    Respecto a los resultados de la prueba de memoria en concreto hemos observado que el rendimiento no se ve tan alterado por el consumo de cafeina, aunque podemos ver una leve mejora de los resultados de memoria consumiendo cafeína, los datos no son conluyentes en este caso, más bien hay una desviación muy baja entre los promedios de capacidad memorística en función del nivel de cafeína consumido.
+    Por tanto, ¿se cumple la hipótesis? No, consumir café no mejora las capacidades cognitivas en , más bien lo cmntrario, deterioraría las capacidades cognitivas.
+
+    También hemos comprobado la diferencia de consumo de cafeína por generación, parece que cada generación sigue el mismo patrón de consumo, la generación X de 45 a 60 años se diferencia por un 1% en consumir menos café, lo cual no es significativo en el análisis, pero sí hemos observado en los participantes que es más común el consumo moderado de cafeína, es decir, de 81 a 200 mg, lo que serían 1 o 2 tazas de café diarias.
 
 ## Hipótesis 2 sobre el sueño:
 Hipótesis: La duración del sueño varía significativamente entre diferentes generaciones y se relaciona con el rendimiento cognitivo y la memoria.
@@ -215,6 +224,23 @@ Hipótesis: La duración del sueño varía significativamente entre diferentes g
       - Scatter Plots: Para visualizar la relación entre sleep_duration y cognitive_score (o memory_test_score), coloreando los puntos por generación para ver si la relación varía.
       - Line Plots (con intervalos de confianza): Si agrupas por generación y calculas la media de cognitive_score (o memory_test_score) para diferentes rangos de sleep_duration, un line plot puede mostrar tendencias.
 
+
+    - Resultados:
+       ·Similitud General en la Duración del Sueño: A primera vista, parece haber una similitud general en la duración promedio del sueño (alrededor de 7 horas)  Sabiendo esto hemos descubierto que el rendimiento cognitivo sí se ve influenciado por las horas de sueño. 
+       
+       Las puntuaciones más bajas se identifican con rangos de horas de sueño entre 4 y 10 horas, con un promedio de 6 horas 36 minutos. Las puntuaciones más altas se identifican con un rango entre valores extremos 5,5 y 9, aproximadamente, con un promedio de 7 horas 23 minutos.
+       
+       Sin embargo, las puntuaciones medias se relacionan en su mayoría con horas de sueño en un rango de 6,5 a 7,5 horas aproximadamente, siendo el promedio de 6 horas 58 minutos (rendimiento cognitivo medio) y 7 horas 3 minutos (rendimiento cognitivomedio-alto).
+
+        También hemos observado que el género, la dieta y sus relaciones con las horas de sueño. Hemos encontrado:
+
+        ·Posible Mayor Variabilidad en "Other": El grupo de género "Other" parece mostrar una variabilidad más pronunciada en la duración del sueño en comparación con "Female" y "Male", especialmente hacia el extremo superior del rango de edad. Sin embargo, es importante recordar que el tamaño de la muestra para "Other" es menor, lo que podría influir en esta variabilidad.
+        
+        ·Cabe destacar también que los valores extremos respecto a las horas de sueño suelen corresponder a la dieta vegana en todos los géneros. La dieta vegetariana sigue una tendencia similar aunque su dispersión entre los valores es más baja.
+    
+    Con estos resultados podemos concluir que la la dieta influye en las horas de sueño en la muestra analizada, y las horas de sueño se relacionan con el rendimiento cognitivo. Así, los participantes que duermen de 7 a 7 horas y media de promedio son los que mejor rinden en las pruebas, teniendo en cuenta que existe valores muy extremos que también consiguen los resultados, lo cual sería interesante analizar.
+    Sin embargo, el rendimiento bajo se relaciona con el grupo de participantes con las horas de sueño más dispersas entre sí, siendo la media de 6 horas y media aproximadamente.
+
 ## Hipótesis 3 sobre el Estrés:
 
 Hipótesis: Los niveles de estrés varían entre las categorías de género y se relacionan negativamente con el rendimiento cognitivo.
@@ -226,7 +252,45 @@ Hipótesis: Los niveles de estrés varían entre las categorías de género y se
           - Stacked Bar Charts: Para mostrar la proporción de cada stress_category dentro de cada gender.
           - Boxplots o Violin Plots: Para comparar la distribución de cognitive_score entre las diferentes categorías de stress_category.
 
-## Hipótesis 4 sobre la Dieta:
+
+    - Resultados:
+   ·Los niveles promedio de rendimiento cognitivo no bajan claramente con el aumento del estrés: 
+     Curiosamente, el grupo con estrés medio (Medium) tiene los puntajes cognitivos más altos en todas las categorías de género.
+
+     El grupo con estrés alto (High) tiene valores ligeramente más bajos, pero no dramáticamente.
+
+     El grupo con estrés bajo (Low) también tiene valores más bajos que el medio, lo cual va en contra de la hipótesis común de que menos estrés = mejor rendimiento.
+
+    ·Diferencias por género
+    En los tres niveles de estrés, los valores promedio por género son similares, con una ligera ventaja para:
+
+    Mujeres (Female) y hombres (Male) en estrés medio.
+
+    El grupo “Other” es más pequeño, pero destaca que los participantes con estrés medio o alto 
+
+
+
+## Hipótesis 4 sobre el Tiempo de Pantalla y el Ejercicio:
+
+ Hipótesis: Un mayor tiempo de pantalla diario se asocia con niveles de estrés más altos y menor duración del sueño. Esto indica un mayor deterioro de las capacidades cognitivas y su rendimiento.
+       ·daily_screen_time vs. stress_category
+       ·daily_screen_time vs. sleep_duration
+                        vs. cognitive_score
+                        vs. memory
+    Gráficas representativas:
+          - Boxplots o Violin Plots: Para comparar la distribución de stress_level o sleep_duration entre diferentes rangos de daily_screen_time (podrías categorizar daily_screen_time si es necesario).
+          - Boxplots o Violin Plots: Para comparar la distribución de stress_level o cognitive_score entre las diferentes categorías de exercise_frequency.
+
+##  Hipótesis 5 sobre la Frecuecia de Ejercicio:
+
+Hipótesis: La mayor frecuencia de ejercicio se asocia con menor estrés y mejor rendimiento cognitivo.
+    Gráficas representativas:
+          - Histograma
+
+
+    - Resultados:
+
+## Hipótesis 6 sobre la Dieta:
 
 Hipótesis: El tipo de dieta se asocia con diferentes niveles de ingesta de cafeína y puede influir en el rendimiento cognitivo.
     Relaciones a analizar:
@@ -237,25 +301,7 @@ Hipótesis: El tipo de dieta se asocia con diferentes niveles de ingesta de cafe
           - Stacked Bar Charts: Para mostrar la proporción de cada caffeine_category dentro de cada diet_type.
           - Boxplots o Violin Plots: Para comparar la distribución de cognitive_score entre los diferentes tipos de diet_type.
 
-## Hipótesis 5 sobre el Tiempo de Pantalla y el Ejercicio:
 
- Hipótesis: Un mayor tiempo de pantalla diario se asocia con niveles de estrés más altos y menor duración del sueño, mientras que una mayor frecuencia de ejercicio se asocia con menor estrés y mejor rendimiento cognitivo.
-    Relaciones a analizar:
-       ·daily_screen_time vs. stress_category
-       ·daily_screen_time vs. sleep_duration
-       ·exercise_frequency vs. stress_category
-       ·exercise_frequency vs. cognitive_score
-    Gráficas representativas:
-          - Boxplots o Violin Plots: Para comparar la distribución de stress_level o sleep_duration entre diferentes rangos de daily_screen_time (podrías categorizar daily_screen_time si es necesario).
-          - Boxplots o Violin Plots: Para comparar la distribución de stress_level o cognitive_score entre las diferentes categorías de exercise_frequency.
-##  Hipótesis 6 sobre la Predicción de la IA:
-
-Hipótesis: La puntuación predicha por la IA (ai_predicted_score) está fuertemente correlacionada con la puntuación cognitiva real (cognitive_score) y podría mostrar patrones similares en relación con otras variables.
-    Relaciones a analizar:
-       ·ai_predicted_score vs. cognitive_score (ya lo viste en la correlación).
-       ·ai_predicted_score vs. otras variables (para ver si sigue tendencias similares a cognitive_score).  
-    Gráficas representativas:
-          - Scatter Plot: Para visualizar la relación entre ai_predicted_score y cognitive_score.
-          - Comparación de Boxplots/Violin Plots: Superponer (si es posible y claro) las distribuciones de cognitive_score y ai_predicted_score para diferentes categorías de otras variables (ej., generation, stress_category).
+    - Resultados:
 
 *Multivariedad: Las relaciones entre variables pueden ser complejas y estar influenciadas por otras variables. Consideramos la posibilidad de realizar análisis multivariados más adelante si encuentras relaciones interesantes a nivel bivariado.*
