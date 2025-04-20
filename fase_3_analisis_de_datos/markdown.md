@@ -199,30 +199,33 @@ Podemos formular algunas hipótesis y pensar en las relaciones esenciales a anal
   **Posibles Hipótesis y Relaciones Esenciales a Analizar:**
   
 
-## Hipótesis 1 sobre la cafeína:
-Los estudios realizados han mostrado que el consumo moderado de café está asociado con un menor riesgo de deterioro cognitivo, osteoporosis, diabetes y enfermedades neurodegenerativas como el Alzheimer y el Parkinson. La cafeína, como principal compuesto activo del café, parece tener un efecto protector sobre la memoria y la atención.
+## Hipótesis 1 sobre la ingesta de cafeína:
+   *Los estudios realizados han mostrado que el consumo moderado de café está asociado con un menor riesgo de deterioro cognitivo, osteoporosis, diabetes y enfermedades neurodegenerativas como el Alzheimer y el Parkinson. La cafeína, como principal compuesto activo del café, parece tener un efecto protector sobre la memoria y la atención.
     El consumo de café podría estar relacionado con la salud, por ejemplo, la pérdida de demencia es menor en personas que han tenido una ingesta moderada y regular. También se ha desprendido del estudio que un exceso en la ingesta de esta bebida tiene consecuencias negativas para la salud. El café en una medida razonable tiene efectos antioxidantes e inflamatorios para ayudar a proteger nuestro cerebro.
     Fuente 2: https://www.sabervivirtv.com/nutricion/cuanta-cafeina-tiene-un-cafe-depende-de-como-lo-prepares_11344
-    "Las ingestas de cafeína de hasta 400 mg al día […] no tienen efectos perjudiciales para la salud de los adultos en la población general, excepto en el caso de las embarazadas". Para estas últimas, el tope está en 200 mg diarios. Una taza de cafetera italiana contiene entorno a 70 miligramos de cafeína.
+    "Las ingestas de cafeína de hasta 400 mg al día […] no tienen efectos perjudiciales para la salud de los adultos en la población general, excepto en el caso de las embarazadas". Para estas últimas, el tope está en 200 mg diarios. Una taza de cafetera italiana contiene entorno a 70 miligramos de cafeína.*
 
 
     - Resultados:
-    Tras relacionar los factores cognitivos y el consumo de cafeína hemos podido observar que cuando los resultados de la prueba cognitiva son bajos en promedio el nivel de cafeina de los participantes alcanza casi los 450 mg, lo que serían 6 tazas y media de café diarias. Sin embargo cuando el consumo de cafeína va bajando, observamos que el rendimiento cognitivo va aumentando.
-    Respecto a los resultados de la prueba de memoria en concreto hemos observado que el rendimiento no se ve tan alterado por el consumo de cafeina, aunque podemos ver una leve mejora de los resultados de memoria consumiendo cafeína, los datos no son conluyentes en este caso, más bien hay una desviación muy baja entre los promedios de capacidad memorística en función del nivel de cafeína consumido.
+    Tras relacionar los factores cognitivos y el consumo de cafeína hemos podido observar que cuando el nivel de cafeina de los participantes alcanza casi los 450 mg encontramos más participantes con un rendimiento cognitivo medio y bajo. 450 mg serían 6 tazas y media de café diarias. Sin embargo cuando el consumo de cafeína se encuentra entre 100 y 200 mg (alrededor de 2 tazas) el rendimiento cognitivo suele ser más alto. A partir de los 150 mg es más común el rendimiento cognitivo bajo.
+
+    Respecto a los resultados de la prueba de memoria, en concreto, hemos observado que el rendimiento no se ve tan alterado por el consumo de cafeina, aunque podemos ver una leve mejora de los resultados de memoria consumiendo cafeína, los datos no son conluyentes en este caso, más bien hay una desviación muy baja entre los promedios de capacidad memorística en función del nivel de cafeína consumido.
     Por tanto, ¿se cumple la hipótesis? No, consumir café no mejora las capacidades cognitivas en , más bien lo cmntrario, deterioraría las capacidades cognitivas.
 
-    También hemos comprobado la diferencia de consumo de cafeína por generación, parece que cada generación sigue el mismo patrón de consumo, la generación X de 45 a 60 años se diferencia por un 1% en consumir menos café, lo cual no es significativo en el análisis, pero sí hemos observado en los participantes que es más común el consumo moderado de cafeína, es decir, de 81 a 200 mg, lo que serían 1 o 2 tazas de café diarias.
 
-## Hipótesis 2 sobre el sueño:
-Hipótesis: La duración del sueño varía significativamente entre diferentes generaciones y se relaciona con el rendimiento cognitivo y la memoria.
+     También hemos comprobado la diferencia de consumo de cafeína por generación, parece que cada generación sigue el mismo patrón de consumo, la generación X de 45 a 60 años se diferencia por un 1% en consumir menos café, lo cual no es significativo en el análisis, pero sí hemos observado en los participantes que es más común el consumo moderado de cafeína, es decir, de 81 a 200 mg, lo que serían 1 o 2 tazas de café diarias.
+
+        🔹 Variables:
+        caffeine_intake o caffeine_category
+        cognitive_score o cognitive_score_category
+
+## Hipótesis 2 sobre las horas de sueño:
+    Hipótesis: La duración del sueño varía significativamente entre diferentes generaciones y se relaciona con el rendimiento cognitivo y la memoria.
      Relaciones a analizar:
        ·sleep_duration vs. generation
        ·sleep_duration vs. cognitive_score (por generación)
        ·sleep_duration vs. memory_test_score (por generación)
-    Gráficas representativas:
-      - Boxplots o Violin Plots: Para comparar la distribución de sleep_duration entre las diferentes generaciones.
-      - Scatter Plots: Para visualizar la relación entre sleep_duration y cognitive_score (o memory_test_score), coloreando los puntos por generación para ver si la relación varía.
-      - Line Plots (con intervalos de confianza): Si agrupas por generación y calculas la media de cognitive_score (o memory_test_score) para diferentes rangos de sleep_duration, un line plot puede mostrar tendencias.
+    Varía por edad, dieta o género? ¿A más horas de sueño, mayor rendimiento cognitivo y mejor memoria?
 
 
     - Resultados:
@@ -254,8 +257,8 @@ Hipótesis: Los niveles de estrés varían entre las categorías de género y se
 
 
     - Resultados:
-   ·Los niveles promedio de rendimiento cognitivo no bajan claramente con el aumento del estrés: 
-     Curiosamente, el grupo con estrés medio (Medium) tiene los puntajes cognitivos más altos en todas las categorías de género.
+    ·Los niveles promedio de rendimiento cognitivo no bajan claramente con el aumento del estrés: 
+    Curiosamente, el grupo con estrés medio (Medium) tiene los puntajes cognitivos más altos en todas las categorías de género.
 
      El grupo con estrés alto (High) tiene valores ligeramente más bajos, pero no dramáticamente.
 
