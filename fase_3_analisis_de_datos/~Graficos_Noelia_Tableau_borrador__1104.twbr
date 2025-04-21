@@ -470,6 +470,7 @@
       <column-instance column='[cognitive_score]' derivation='Count' name='[cnt:cognitive_score:qk]' pivot='key' type='quantitative' />
       <column-instance column='[generation]' derivation='Count' name='[cnt:generation:qk]' pivot='key' type='quantitative' />
       <column-instance column='[memory_test_score]' derivation='Count' name='[cnt:memory_test_score:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[reaction_time]' derivation='Count' name='[cnt:reaction_time:qk]' pivot='key' type='quantitative' />
       <column-instance column='[sleep_duration]' derivation='Count' name='[cnt:sleep_duration:qk]' pivot='key' type='quantitative' />
       <column-instance column='[stress_level]' derivation='Count' name='[cnt:stress_level:qk]' pivot='key' type='quantitative' />
       <column-instance column='[caffeine_intake]' derivation='CountD' name='[ctd:caffeine_intake:qk]' pivot='key' type='quantitative' />
@@ -997,15 +998,15 @@
               <bucket>&quot;Low&quot;</bucket>
             </map>
           </encoding>
-          <encoding attr='color' field='[none:generation:nk]' palette='sf_color_safe' type='palette'>
-            <map to='#08916d'>
+          <encoding attr='color' field='[none:generation:nk]' palette='nuriel_stone_10_0' type='palette'>
+            <map to='#31a1b3'>
               <bucket>&quot;Millennials&quot;</bucket>
             </map>
-            <map to='#529ee0'>
-              <bucket>&quot;Gen Z&quot;</bucket>
-            </map>
-            <map to='#d9a6c2'>
+            <map to='#6fb899'>
               <bucket>&quot;Generación X&quot;</bucket>
+            </map>
+            <map to='#8175aa'>
+              <bucket>&quot;Gen Z&quot;</bucket>
             </map>
           </encoding>
           <encoding attr='color' field='[:Measure Names]' palette='sf_default' type='palette'>
@@ -1020,6 +1021,9 @@
             </map>
             <map to='#4e79a7'>
               <bucket>&quot;[federated.03g3trs11feaie1ahuzvq1tp0woa].[cnt:generation:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.03g3trs11feaie1ahuzvq1tp0woa].[cnt:reaction_time:qk]&quot;</bucket>
             </map>
             <map to='#4e79a7'>
               <bucket>&quot;[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:age:qk]&quot;</bucket>
@@ -1235,6 +1239,12 @@
             <map to='#08916d'>
               <multibucket>
                 <bucket>&quot;Normal&quot;</bucket>
+                <bucket>&quot;[federated.03g3trs11feaie1ahuzvq1tp0woa].[cnt:reaction_time:qk]&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#08916d'>
+              <multibucket>
+                <bucket>&quot;Normal&quot;</bucket>
                 <bucket>&quot;[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:reaction_time:qk]&quot;</bucket>
               </multibucket>
             </map>
@@ -1253,6 +1263,12 @@
             <map to='#529ee0'>
               <multibucket>
                 <bucket>&quot;Top fast&quot;</bucket>
+                <bucket>&quot;[federated.03g3trs11feaie1ahuzvq1tp0woa].[cnt:reaction_time:qk]&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#529ee0'>
+              <multibucket>
+                <bucket>&quot;Top fast&quot;</bucket>
                 <bucket>&quot;[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:reaction_time:qk]&quot;</bucket>
               </multibucket>
             </map>
@@ -1271,6 +1287,12 @@
             <map to='#d9a6c2'>
               <multibucket>
                 <bucket>&quot;Fast&quot;</bucket>
+                <bucket>&quot;[federated.03g3trs11feaie1ahuzvq1tp0woa].[cnt:reaction_time:qk]&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#d9a6c2'>
+              <multibucket>
+                <bucket>&quot;Fast&quot;</bucket>
                 <bucket>&quot;[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:reaction_time:qk]&quot;</bucket>
               </multibucket>
             </map>
@@ -1284,6 +1306,12 @@
               <multibucket>
                 <bucket>&quot;Slow&quot;</bucket>
                 <bucket>&quot;[federated.03g3trs11feaie1ahuzvq1tp0woa].[avg:reaction_time:qk]&quot;</bucket>
+              </multibucket>
+            </map>
+            <map to='#f59b00'>
+              <multibucket>
+                <bucket>&quot;Slow&quot;</bucket>
+                <bucket>&quot;[federated.03g3trs11feaie1ahuzvq1tp0woa].[cnt:reaction_time:qk]&quot;</bucket>
               </multibucket>
             </map>
             <map to='#f59b00'>
@@ -1387,18 +1415,18 @@
     </action>
     <action caption='Resaltado 1 (generado)' name='[Action2_BA8887B1A42D4E949C0D5553EA144C6A]'>
       <activation auto-clear='true' type='on-select' />
-      <source type='sheet' worksheet='H2- TR' />
+      <source type='sheet' worksheet='H5- TR' />
       <command command='tsc:brush'>
         <param name='field-captions' value='Memory Score Category' />
-        <param name='target' value='H2- TR' />
+        <param name='target' value='H5- TR' />
       </command>
     </action>
     <action caption='Resaltado 1 (generado) 1' name='[Action3_0AA5D49005E3476F80DFB33CA017C2E9]'>
       <activation auto-clear='true' type='on-select' />
-      <source type='sheet' worksheet='H2- TRCafe' />
+      <source type='sheet' worksheet='H5- TRCafe' />
       <command command='tsc:brush'>
         <param name='field-captions' value='Memory Score Category' />
-        <param name='target' value='H2- TRCafe' />
+        <param name='target' value='H5- TRCafe' />
       </command>
     </action>
   </actions>
@@ -1829,7 +1857,508 @@
       </table>
       <simple-id uuid='{45E82492-A36F-461F-9EEF-C2A7E02BC1B9}' />
     </worksheet>
-    <worksheet name='H2- Rto'>
+    <worksheet name='H2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Relación Horas de Sueño y Rendimiento Cognitivo</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
+            <column caption='Cognitive Score' datatype='real' name='[cognitive_score]' role='measure' type='quantitative' />
+            <column-instance column='[cognitive_score]' derivation='Median' name='[med:cognitive_score:qk]' pivot='key' type='quantitative' />
+            <column caption='Memory Score Category' datatype='string' name='[memory_score_category]' role='dimension' type='nominal' />
+            <column-instance column='[memory_score_category]' derivation='None' name='[none:memory_score_category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[sleep_duration]' derivation='None' name='[none:sleep_duration:qk]' pivot='key' type='quantitative' />
+            <column caption='Sleep Duration' datatype='real' name='[sleep_duration]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:memory_score_category:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;High&quot;</bucket>
+              <bucket>&quot;Medium&quot;</bucket>
+              <bucket>&quot;Low&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:memory_score_category:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:cognitive_score:qk]</rows>
+        <cols>[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:sleep_duration:qk]</cols>
+        <show-full-range>
+          <column>[federated.03g3trs11feaie1ahuzvq1tp0woa].[Sleep Duration (agrupación)]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{AB7CA40C-F523-4696-8525-9B3B5648A417}' />
+    </worksheet>
+    <worksheet name='H2-Diet-G'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Tendencia en Horas de Sueño por Edad, Género y Dieta</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
+            <column caption='Age' datatype='integer' name='[age]' role='measure' type='quantitative' />
+            <column caption='Diet Type' datatype='string' name='[diet_type]' role='dimension' type='nominal' />
+            <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[sleep_duration]' derivation='Median' name='[med:sleep_duration:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[age]' derivation='None' name='[none:age:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[diet_type]' derivation='None' name='[none:diet_type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
+            <column caption='Sleep Duration' datatype='real' name='[sleep_duration]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:diet_type:nk]' />
+              <text column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:sleep_duration:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:sleep_duration:qk]</rows>
+        <cols>([federated.03g3trs11feaie1ahuzvq1tp0woa].[none:gender:nk] * [federated.03g3trs11feaie1ahuzvq1tp0woa].[none:age:qk])</cols>
+      </table>
+      <simple-id uuid='{24207A38-68A2-4905-B179-7CA24B470795}' />
+    </worksheet>
+    <worksheet name='H2-DietEstres'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Tendencia en Estrés por Dieta y Consumo de Cafeína</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
+            <column caption='Caffeine Category' datatype='string' name='[caffeine_category]' role='dimension' type='nominal' />
+            <column caption='Diet Type' datatype='string' name='[diet_type]' role='dimension' type='nominal' />
+            <column-instance column='[stress_level]' derivation='Median' name='[med:stress_level:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[caffeine_category]' derivation='None' name='[none:caffeine_category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[diet_type]' derivation='None' name='[none:diet_type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[stress_category]' derivation='None' name='[none:stress_category:nk]' pivot='key' type='nominal' />
+            <column caption='Stress Category' datatype='string' name='[stress_category]' role='dimension' type='nominal' />
+            <column caption='Stress Level' datatype='integer' name='[stress_level]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:caffeine_category:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Almost nothing&quot;</bucket>
+              <bucket>&quot;Low&quot;</bucket>
+              <bucket>&quot;Moderate&quot;</bucket>
+              <bucket>&quot;Medium-High&quot;</bucket>
+              <bucket>&quot;High&quot;</bucket>
+              <bucket>&quot;Too much&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <manual-sort column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:diet_type:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Non-Vegetarian&quot;</bucket>
+              <bucket>&quot;Vegetarian&quot;</bucket>
+              <bucket>&quot;Vegan&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <manual-sort column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:stress_category:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;High&quot;</bucket>
+              <bucket>&quot;Medium&quot;</bucket>
+              <bucket>&quot;Low&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:stress_category:nk]' />
+              <size column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:caffeine_category:nk]' />
+              <text column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:diet_type:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5162431001663208' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-markers-mode' value='auto' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:stress_level:qk]</rows>
+        <cols>([federated.03g3trs11feaie1ahuzvq1tp0woa].[none:diet_type:nk] / [federated.03g3trs11feaie1ahuzvq1tp0woa].[none:caffeine_category:nk])</cols>
+      </table>
+      <simple-id uuid='{DAB1B19C-EBD1-46CC-8A76-7F6E45FE1CC9}' />
+    </worksheet>
+    <worksheet name='H3-DietSueño'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Tendencia en Horas de Sueño por Género, y Dieta y Nivel de Cafeína</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
+            <column caption='Caffeine Category' datatype='string' name='[caffeine_category]' role='dimension' type='nominal' />
+            <column caption='Diet Type' datatype='string' name='[diet_type]' role='dimension' type='nominal' />
+            <column-instance column='[sleep_duration]' derivation='Median' name='[med:sleep_duration:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[stress_level]' derivation='Median' name='[med:stress_level:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[caffeine_category]' derivation='None' name='[none:caffeine_category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[diet_type]' derivation='None' name='[none:diet_type:nk]' pivot='key' type='nominal' />
+            <column caption='Sleep Duration' datatype='real' name='[sleep_duration]' role='measure' type='quantitative' />
+            <column caption='Stress Level' datatype='integer' name='[stress_level]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:caffeine_category:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;Almost nothing&quot;</bucket>
+              <bucket>&quot;Low&quot;</bucket>
+              <bucket>&quot;Moderate&quot;</bucket>
+              <bucket>&quot;Medium-High&quot;</bucket>
+              <bucket>&quot;High&quot;</bucket>
+              <bucket>&quot;Too much&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:diet_type:nk]' />
+              <text column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:sleep_duration:qk]' />
+              <lod column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:stress_level:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:sleep_duration:qk]</rows>
+        <cols>[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:caffeine_category:nk]</cols>
+      </table>
+      <simple-id uuid='{8ECF1B65-1340-40CA-9A44-485E04F4A34C}' />
+    </worksheet>
+    <worksheet name='H3-Rto'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Relación Horas de Sueño y Rendimiento (Extremos)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
+            <column caption='Cognitive Category' datatype='string' name='[cognitive_category]' role='dimension' type='nominal' />
+            <column caption='Cognitive Score' datatype='real' name='[cognitive_score]' role='measure' type='quantitative' />
+            <column-instance column='[sleep_duration]' derivation='Median' name='[med:sleep_duration:qk]' pivot='key' type='quantitative' />
+            <column caption='Memory Test Score' datatype='integer' name='[memory_test_score]' role='measure' type='quantitative' />
+            <column-instance column='[cognitive_category]' derivation='None' name='[none:cognitive_category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[cognitive_score]' derivation='None' name='[none:cognitive_score:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[memory_test_score]' derivation='None' name='[none:memory_test_score:qk]' pivot='key' type='quantitative' />
+            <column caption='Sleep Duration' datatype='real' name='[sleep_duration]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <manual-sort column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:cognitive_category:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;High&quot;</bucket>
+              <bucket>&quot;Medium-High&quot;</bucket>
+              <bucket>&quot;Medium&quot;</bucket>
+              <bucket>&quot;Low&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:cognitive_score:qk]' field-type='quantitative' fold='true' scope='cols' type='space' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:memory_test_score:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[:Measure Names]' />
+              <lod column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:memory_test_score:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1' />
+                <format attr='mark-markers-mode' value='all' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:cognitive_score:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:cognitive_category:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-transparency' value='160' />
+                <format attr='mark-markers-mode' value='auto' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:sleep_duration:qk]</rows>
+        <cols>([federated.03g3trs11feaie1ahuzvq1tp0woa].[none:memory_test_score:qk] + [federated.03g3trs11feaie1ahuzvq1tp0woa].[none:cognitive_score:qk])</cols>
+        <show-full-range>
+          <column>[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:Sleep Duration (agrupación):qk]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{1E81390F-C719-4710-BF56-7D15814B591F}' />
+    </worksheet>
+    <worksheet name='H3-SueñoScreen'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Relación entre</run>
+            <run fontname='Sitka Subheading Semibold' italic='true' underline='true'>Æ </run>
+            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Horas de Pantalla y Tiempo de Reacción</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
+            <column caption='Cognitive Score' datatype='real' name='[cognitive_score]' role='measure' type='quantitative' />
+            <column caption='Daily Screen Time' datatype='real' name='[daily_screen_time]' role='measure' type='quantitative' />
+            <column-instance column='[cognitive_score]' derivation='Median' name='[med:cognitive_score:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[daily_screen_time]' derivation='None' name='[none:daily_screen_time:qk]' pivot='key' type='quantitative' />
+            <column caption='Sleep Duration' datatype='real' name='[sleep_duration]' role='measure' type='quantitative' />
+            <column-instance column='[sleep_duration]' derivation='Sum' name='[sum:sleep_duration:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='5' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:cognitive_score:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-markers-mode' value='all' />
+                <format attr='size' value='0.88955801725387573' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='mark-transparency' value='132' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[sum:sleep_duration:qk]</rows>
+        <cols>[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:daily_screen_time:qk]</cols>
+      </table>
+      <simple-id uuid='{BA335B1D-2991-4C77-AE3A-607C71A9C630}' />
+    </worksheet>
+    <worksheet name='H4-2EstresRto'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname='Sitka Subheading Semibold' italic='true' underline='true'>Relación Pruebas Rendimiento con Nivel de Estrés</run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run fontname='Tableau Semibold'>Relación entre rendimiento cognitivo y de memoria con consumo de cafeína por día en función de los promedios.</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
+            <column caption='Cognitive Score' datatype='real' name='[cognitive_score]' role='measure' type='quantitative' />
+            <column-instance column='[cognitive_score]' derivation='Median' name='[med:cognitive_score:qk]' pivot='key' type='quantitative' />
+            <column caption='Memory Test Score' datatype='integer' name='[memory_test_score]' role='measure' type='quantitative' />
+            <column-instance column='[memory_test_score]' derivation='None' name='[none:memory_test_score:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[stress_category]' derivation='None' name='[none:stress_category:nk]' pivot='key' type='nominal' />
+            <column-instance column='[stress_level]' derivation='None' name='[none:stress_level:qk]' pivot='key' type='quantitative' />
+            <column caption='Stress Category' datatype='string' name='[stress_category]' role='dimension' type='nominal' />
+            <column caption='Stress Level' datatype='integer' name='[stress_level]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:stress_level:qk]' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-diverging'>
+                <color>#1d469e</color>
+                <color>#2a50a3</color>
+                <color>#385ba8</color>
+                <color>#4667ae</color>
+                <color>#5673b3</color>
+                <color>#6680b8</color>
+                <color>#778ebe</color>
+                <color>#899bc3</color>
+                <color>#9caac8</color>
+                <color>#afb9ce</color>
+                <color>#c3c8d3</color>
+                <color>#d9d9d9</color>
+                <color>#d1c6c1</color>
+                <color>#cab5aa</color>
+                <color>#c3a495</color>
+                <color>#bc9480</color>
+                <color>#b5856d</color>
+                <color>#ad765b</color>
+                <color>#a6694a</color>
+                <color>#9f5c3a</color>
+                <color>#98502b</color>
+                <color>#91441e</color>
+                <color>#8a3a12</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='7' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:stress_level:qk]' />
+              <text column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:stress_category:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.9890055656433105' />
+                <format attr='mark-markers-mode' value='none' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:memory_test_score:qk]</rows>
+        <cols>[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:cognitive_score:qk]</cols>
+        <show-full-range>
+          <column>[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:Memory Test Score (agrupación):qk]</column>
+        </show-full-range>
+      </table>
+      <simple-id uuid='{36832043-69C0-4466-B80E-11FDCA2C7089}' />
+    </worksheet>
+    <worksheet name='H4-EstresRto'>
       <layout-options>
         <title>
           <formatted-text>
@@ -1915,9 +2444,6 @@
             </view>
             <mark class='Circle' />
             <mark-sizing mark-sizing-setting='marks-scaling-off' />
-            <encodings>
-              <text column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:memory_test_score:qk]' />
-            </encodings>
             <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
             <style>
               <style-rule element='cell'>
@@ -1934,7 +2460,7 @@
                 <format attr='has-stroke' value='true' />
                 <format attr='stroke-color' value='#000000' />
                 <format attr='mark-labels-mode' value='all' />
-                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-show' value='false' />
               </style-rule>
             </style>
           </pane>
@@ -1947,7 +2473,97 @@
       </table>
       <simple-id uuid='{692549AB-44B1-4DE7-8812-B7DEA3CF4439}' />
     </worksheet>
-    <worksheet name='H2- TR'>
+    <worksheet name='H4-EstresScreen'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Relación entre</run>
+            <run fontname='Sitka Subheading Semibold' italic='true' underline='true'>Æ </run>
+            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Horas en Pantalla y Estrés</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
+            <column caption='Daily Screen Time' datatype='real' name='[daily_screen_time]' role='measure' type='quantitative' />
+            <column-instance column='[daily_screen_time]' derivation='Median' name='[med:daily_screen_time:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[stress_level]' derivation='Median' name='[med:stress_level:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[daily_screen_time]' derivation='None' name='[none:daily_screen_time:qk]' pivot='key' type='quantitative' />
+            <column caption='Stress Level' datatype='integer' name='[stress_level]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:daily_screen_time:qk]' palette='red_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:daily_screen_time:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:stress_level:qk]</rows>
+        <cols>[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:daily_screen_time:qk]</cols>
+      </table>
+      <simple-id uuid='{52C3B60F-9B2A-4479-BC83-3A51D063CA6C}' />
+    </worksheet>
+    <worksheet name='H4-RtoScreen'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Relación entre</run>
+            <run fontname='Sitka Subheading Semibold' italic='true' underline='true'>Æ </run>
+            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Horas en Pantalla y Rendimiento Cognitivo</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
+          </datasources>
+          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
+            <column caption='Cognitive Score' datatype='real' name='[cognitive_score]' role='measure' type='quantitative' />
+            <column caption='Daily Screen Time' datatype='real' name='[daily_screen_time]' role='measure' type='quantitative' />
+            <column-instance column='[cognitive_score]' derivation='Median' name='[med:cognitive_score:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[daily_screen_time]' derivation='Median' name='[med:daily_screen_time:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[daily_screen_time]' derivation='None' name='[none:daily_screen_time:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:daily_screen_time:qk]' palette='red_green_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:daily_screen_time:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:cognitive_score:qk]</rows>
+        <cols>[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:daily_screen_time:qk]</cols>
+      </table>
+      <simple-id uuid='{30071F2B-C735-4898-9FC4-F9D4F30C9E65}' />
+    </worksheet>
+    <worksheet name='H5- TR'>
       <layout-options>
         <title>
           <formatted-text>
@@ -2071,7 +2687,7 @@
       </table>
       <simple-id uuid='{F72C7980-DDAC-4D25-948F-5E2996653A8F}' />
     </worksheet>
-    <worksheet name='H2- TRCafe'>
+    <worksheet name='H5- TRCafe'>
       <layout-options>
         <title>
           <formatted-text>
@@ -2144,569 +2760,7 @@
       </table>
       <simple-id uuid='{8A6F83EB-E8F6-482D-BB52-FAA9791CB175}' />
     </worksheet>
-    <worksheet name='H2-DietEstres'>
-      <layout-options>
-        <title>
-          <formatted-text>
-            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Tendencia en Estrés por Dieta y Consumo de Cafeína</run>
-          </formatted-text>
-        </title>
-      </layout-options>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
-          </datasources>
-          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
-            <column caption='Caffeine Category' datatype='string' name='[caffeine_category]' role='dimension' type='nominal' />
-            <column caption='Diet Type' datatype='string' name='[diet_type]' role='dimension' type='nominal' />
-            <column-instance column='[stress_level]' derivation='Median' name='[med:stress_level:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[caffeine_category]' derivation='None' name='[none:caffeine_category:nk]' pivot='key' type='nominal' />
-            <column-instance column='[diet_type]' derivation='None' name='[none:diet_type:nk]' pivot='key' type='nominal' />
-            <column-instance column='[stress_category]' derivation='None' name='[none:stress_category:nk]' pivot='key' type='nominal' />
-            <column caption='Stress Category' datatype='string' name='[stress_category]' role='dimension' type='nominal' />
-            <column caption='Stress Level' datatype='integer' name='[stress_level]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <manual-sort column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:caffeine_category:nk]' direction='ASC'>
-            <dictionary>
-              <bucket>&quot;Almost nothing&quot;</bucket>
-              <bucket>&quot;Low&quot;</bucket>
-              <bucket>&quot;Moderate&quot;</bucket>
-              <bucket>&quot;Medium-High&quot;</bucket>
-              <bucket>&quot;High&quot;</bucket>
-              <bucket>&quot;Too much&quot;</bucket>
-            </dictionary>
-          </manual-sort>
-          <manual-sort column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:diet_type:nk]' direction='ASC'>
-            <dictionary>
-              <bucket>&quot;Non-Vegetarian&quot;</bucket>
-              <bucket>&quot;Vegetarian&quot;</bucket>
-              <bucket>&quot;Vegan&quot;</bucket>
-            </dictionary>
-          </manual-sort>
-          <manual-sort column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:stress_category:nk]' direction='ASC'>
-            <dictionary>
-              <bucket>&quot;High&quot;</bucket>
-              <bucket>&quot;Medium&quot;</bucket>
-              <bucket>&quot;Low&quot;</bucket>
-            </dictionary>
-          </manual-sort>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='refline'>
-            <format attr='stroke-color' id='refline0' value='#000000' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Line' />
-            <mark-sizing mark-sizing-setting='marks-scaling-off' />
-            <encodings>
-              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:stress_category:nk]' />
-              <size column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:caffeine_category:nk]' />
-              <text column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:diet_type:nk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='size' value='1.5162431001663208' />
-                <format attr='mark-labels-show' value='true' />
-                <format attr='mark-markers-mode' value='auto' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:stress_level:qk]</rows>
-        <cols>([federated.03g3trs11feaie1ahuzvq1tp0woa].[none:diet_type:nk] / [federated.03g3trs11feaie1ahuzvq1tp0woa].[none:caffeine_category:nk])</cols>
-      </table>
-      <simple-id uuid='{DAB1B19C-EBD1-46CC-8A76-7F6E45FE1CC9}' />
-    </worksheet>
-    <worksheet name='H3'>
-      <layout-options>
-        <title>
-          <formatted-text>
-            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Relación Horas de Sueño y Rendimiento Cognitivo</run>
-          </formatted-text>
-        </title>
-      </layout-options>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
-          </datasources>
-          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
-            <column caption='Cognitive Score' datatype='real' name='[cognitive_score]' role='measure' type='quantitative' />
-            <column-instance column='[cognitive_score]' derivation='Median' name='[med:cognitive_score:qk]' pivot='key' type='quantitative' />
-            <column caption='Memory Score Category' datatype='string' name='[memory_score_category]' role='dimension' type='nominal' />
-            <column-instance column='[memory_score_category]' derivation='None' name='[none:memory_score_category:nk]' pivot='key' type='nominal' />
-            <column-instance column='[sleep_duration]' derivation='None' name='[none:sleep_duration:qk]' pivot='key' type='quantitative' />
-            <column caption='Sleep Duration' datatype='real' name='[sleep_duration]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <manual-sort column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:memory_score_category:nk]' direction='ASC'>
-            <dictionary>
-              <bucket>&quot;High&quot;</bucket>
-              <bucket>&quot;Medium&quot;</bucket>
-              <bucket>&quot;Low&quot;</bucket>
-            </dictionary>
-          </manual-sort>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='refline'>
-            <format attr='stroke-color' id='refline0' value='#000000' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-            <encodings>
-              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:memory_score_category:nk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-show' value='false' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:cognitive_score:qk]</rows>
-        <cols>[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:sleep_duration:qk]</cols>
-        <show-full-range>
-          <column>[federated.03g3trs11feaie1ahuzvq1tp0woa].[Sleep Duration (agrupación)]</column>
-        </show-full-range>
-      </table>
-      <simple-id uuid='{AB7CA40C-F523-4696-8525-9B3B5648A417}' />
-    </worksheet>
-    <worksheet name='H3-Diet-G'>
-      <layout-options>
-        <title>
-          <formatted-text>
-            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Tendencia en Horas de Sueño por Edad, Género y Dieta</run>
-          </formatted-text>
-        </title>
-      </layout-options>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
-          </datasources>
-          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
-            <column caption='Age' datatype='integer' name='[age]' role='measure' type='quantitative' />
-            <column-instance column='[sleep_duration]' derivation='Avg' name='[avg:sleep_duration:qk]' pivot='key' type='quantitative' />
-            <column caption='Diet Type' datatype='string' name='[diet_type]' role='dimension' type='nominal' />
-            <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
-            <column-instance column='[sleep_duration]' derivation='Median' name='[med:sleep_duration:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[age]' derivation='None' name='[none:age:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[diet_type]' derivation='None' name='[none:diet_type:nk]' pivot='key' type='nominal' />
-            <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
-            <column caption='Sleep Duration' datatype='real' name='[sleep_duration]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='refline'>
-            <format attr='stroke-color' id='refline0' value='#000000' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane id='4' selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Line' />
-            <encodings>
-              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:diet_type:nk]' />
-              <text column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:sleep_duration:qk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-show' value='true' />
-                <format attr='mark-labels-cull' value='true' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[avg:sleep_duration:qk]</rows>
-        <cols>([federated.03g3trs11feaie1ahuzvq1tp0woa].[none:gender:nk] * [federated.03g3trs11feaie1ahuzvq1tp0woa].[none:age:qk])</cols>
-      </table>
-      <simple-id uuid='{24207A38-68A2-4905-B179-7CA24B470795}' />
-    </worksheet>
-    <worksheet name='H3-Rto'>
-      <layout-options>
-        <title>
-          <formatted-text>
-            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Relación Horas de Sueño y Rendimiento (Extremos)</run>
-          </formatted-text>
-        </title>
-      </layout-options>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
-          </datasources>
-          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
-            <column caption='Cognitive Category' datatype='string' name='[cognitive_category]' role='dimension' type='nominal' />
-            <column caption='Cognitive Score' datatype='real' name='[cognitive_score]' role='measure' type='quantitative' />
-            <column-instance column='[sleep_duration]' derivation='Median' name='[med:sleep_duration:qk]' pivot='key' type='quantitative' />
-            <column caption='Memory Test Score' datatype='integer' name='[memory_test_score]' role='measure' type='quantitative' />
-            <column-instance column='[cognitive_category]' derivation='None' name='[none:cognitive_category:nk]' pivot='key' type='nominal' />
-            <column-instance column='[cognitive_score]' derivation='None' name='[none:cognitive_score:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[memory_test_score]' derivation='None' name='[none:memory_test_score:qk]' pivot='key' type='quantitative' />
-            <column caption='Sleep Duration' datatype='real' name='[sleep_duration]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <manual-sort column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:cognitive_category:nk]' direction='ASC'>
-            <dictionary>
-              <bucket>&quot;High&quot;</bucket>
-              <bucket>&quot;Medium-High&quot;</bucket>
-              <bucket>&quot;Medium&quot;</bucket>
-              <bucket>&quot;Low&quot;</bucket>
-            </dictionary>
-          </manual-sort>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:cognitive_score:qk]' field-type='quantitative' fold='true' scope='cols' type='space' />
-          </style-rule>
-          <style-rule element='refline'>
-            <format attr='stroke-color' id='refline0' value='#000000' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Line' />
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-show' value='false' />
-              </style-rule>
-            </style>
-          </pane>
-          <pane id='1' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:memory_test_score:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Line' />
-            <mark-sizing mark-sizing-setting='marks-scaling-off' />
-            <encodings>
-              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[:Measure Names]' />
-              <lod column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:memory_test_score:qk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='size' value='1' />
-                <format attr='mark-markers-mode' value='all' />
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-show' value='false' />
-              </style-rule>
-            </style>
-          </pane>
-          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:cognitive_score:qk]'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Line' />
-            <encodings>
-              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:cognitive_category:nk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-transparency' value='160' />
-                <format attr='mark-markers-mode' value='auto' />
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='mark-labels-show' value='false' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:sleep_duration:qk]</rows>
-        <cols>([federated.03g3trs11feaie1ahuzvq1tp0woa].[none:memory_test_score:qk] + [federated.03g3trs11feaie1ahuzvq1tp0woa].[none:cognitive_score:qk])</cols>
-        <show-full-range>
-          <column>[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:Sleep Duration (agrupación):qk]</column>
-        </show-full-range>
-      </table>
-      <simple-id uuid='{1E81390F-C719-4710-BF56-7D15814B591F}' />
-    </worksheet>
-    <worksheet name='H4-RtoScreen'>
-      <layout-options>
-        <title>
-          <formatted-text>
-            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Relación entre</run>
-            <run fontname='Sitka Subheading Semibold' italic='true' underline='true'>Æ </run>
-            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Horas en Pantalla y Rendimiento Cognitivo</run>
-          </formatted-text>
-        </title>
-      </layout-options>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
-          </datasources>
-          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
-            <column caption='Cognitive Score' datatype='real' name='[cognitive_score]' role='measure' type='quantitative' />
-            <column caption='Daily Screen Time' datatype='real' name='[daily_screen_time]' role='measure' type='quantitative' />
-            <column-instance column='[cognitive_score]' derivation='Median' name='[med:cognitive_score:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[daily_screen_time]' derivation='Median' name='[med:daily_screen_time:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[daily_screen_time]' derivation='None' name='[none:daily_screen_time:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='mark'>
-            <encoding attr='color' field='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:daily_screen_time:qk]' palette='red_green_diverging_10_0' type='interpolated' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-            <encodings>
-              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:daily_screen_time:qk]' />
-            </encodings>
-          </pane>
-        </panes>
-        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:cognitive_score:qk]</rows>
-        <cols>[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:daily_screen_time:qk]</cols>
-      </table>
-      <simple-id uuid='{30071F2B-C735-4898-9FC4-F9D4F30C9E65}' />
-    </worksheet>
-    <worksheet name='H4-SueñoEstres'>
-      <layout-options>
-        <title>
-          <formatted-text>
-            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Tendencia en Estrés por Horas de Sueño</run>
-          </formatted-text>
-        </title>
-      </layout-options>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
-          </datasources>
-          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
-            <column-instance column='[stress_level]' derivation='Count' name='[cnt:stress_level:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[sleep_duration]' derivation='None' name='[none:sleep_duration:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[stress_category]' derivation='None' name='[none:stress_category:nk]' pivot='key' type='nominal' />
-            <column caption='Sleep Duration' datatype='real' name='[sleep_duration]' role='measure' type='quantitative' />
-            <column caption='Stress Category' datatype='string' name='[stress_category]' role='dimension' type='nominal' />
-            <column caption='Stress Level' datatype='integer' name='[stress_level]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <manual-sort column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:stress_category:nk]' direction='ASC'>
-            <dictionary>
-              <bucket>&quot;High&quot;</bucket>
-              <bucket>&quot;Medium&quot;</bucket>
-              <bucket>&quot;Low&quot;</bucket>
-            </dictionary>
-          </manual-sort>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='refline'>
-            <format attr='stroke-color' id='refline0' value='#000000' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Bar' />
-            <mark-sizing mark-sizing-setting='marks-scaling-off' />
-            <encodings>
-              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:stress_category:nk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='size' value='1.5162431001663208' />
-                <format attr='mark-labels-show' value='false' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[cnt:stress_level:qk]</rows>
-        <cols>[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:sleep_duration:qk]</cols>
-      </table>
-      <simple-id uuid='{5A6F732F-BDE5-409F-887D-98A8E8EF6D8F}' />
-    </worksheet>
-    <worksheet name='H4-SueñoScreen'>
-      <layout-options>
-        <title>
-          <formatted-text>
-            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Relación entre</run>
-            <run fontname='Sitka Subheading Semibold' italic='true' underline='true'>Æ </run>
-            <run fontname='Sitka Display Semibold' italic='true' underline='true'>Horas de Sueño y Nivel de Estrés</run>
-          </formatted-text>
-        </title>
-      </layout-options>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
-          </datasources>
-          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
-            <column-instance column='[stress_level]' derivation='Avg' name='[avg:stress_level:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[sleep_duration]' derivation='Median' name='[med:sleep_duration:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[sleep_duration]' derivation='None' name='[none:sleep_duration:qk]' pivot='key' type='quantitative' />
-            <column caption='Sleep Duration' datatype='real' name='[sleep_duration]' role='measure' type='quantitative' />
-            <column caption='Stress Level' datatype='integer' name='[stress_level]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='mark'>
-            <encoding attr='color' field='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:sleep_duration:qk]' num-steps='4' type='custom-interpolated'>
-              <color-palette custom='true' name='' type='ordered-diverging'>
-                <color>#0b3bad</color>
-                <color>#1d49b1</color>
-                <color>#3159b6</color>
-                <color>#4669bb</color>
-                <color>#5c7ac0</color>
-                <color>#738bc5</color>
-                <color>#8b9dca</color>
-                <color>#a4b0cf</color>
-                <color>#bec4d4</color>
-                <color>#d9d9d9</color>
-                <color>#d4c4c4</color>
-                <color>#cfafaf</color>
-                <color>#ca9c9c</color>
-                <color>#c58989</color>
-                <color>#c07878</color>
-                <color>#bb6666</color>
-                <color>#b65656</color>
-                <color>#b14646</color>
-                <color>#ac3838</color>
-              </color-palette>
-            </encoding>
-          </style-rule>
-        </style>
-        <panes>
-          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Line' />
-            <encodings>
-              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:sleep_duration:qk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-markers-mode' value='all' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[avg:stress_level:qk]</rows>
-        <cols>[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:sleep_duration:qk]</cols>
-      </table>
-      <simple-id uuid='{BA335B1D-2991-4C77-AE3A-607C71A9C630}' />
-    </worksheet>
-    <worksheet name='H5 EstresRto'>
-      <layout-options>
-        <title>
-          <formatted-text>
-            <run fontname='Sitka Subheading Semibold' italic='true' underline='true'>Relación Pruebas Memoria y Cognitivas con Nivel de Estrés</run>
-          </formatted-text>
-        </title>
-        <caption>
-          <formatted-text>
-            <run fontname='Tableau Semibold'>Relación entre rendimiento cognitivo y de memoria con consumo de cafeína por día en función de los promedios.</run>
-          </formatted-text>
-        </caption>
-      </layout-options>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='Sheet1 (test)' name='federated.03g3trs11feaie1ahuzvq1tp0woa' />
-          </datasources>
-          <datasource-dependencies datasource='federated.03g3trs11feaie1ahuzvq1tp0woa'>
-            <column caption='Cognitive Score' datatype='real' name='[cognitive_score]' role='measure' type='quantitative' />
-            <column-instance column='[cognitive_score]' derivation='Median' name='[med:cognitive_score:qk]' pivot='key' type='quantitative' />
-            <column caption='Memory Test Score' datatype='integer' name='[memory_test_score]' role='measure' type='quantitative' />
-            <column-instance column='[memory_test_score]' derivation='None' name='[none:memory_test_score:qk]' pivot='key' type='quantitative' />
-            <column-instance column='[stress_category]' derivation='None' name='[none:stress_category:nk]' pivot='key' type='nominal' />
-            <column-instance column='[stress_level]' derivation='None' name='[none:stress_level:qk]' pivot='key' type='quantitative' />
-            <column caption='Stress Category' datatype='string' name='[stress_category]' role='dimension' type='nominal' />
-            <column caption='Stress Level' datatype='integer' name='[stress_level]' role='measure' type='quantitative' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='mark'>
-            <encoding attr='color' field='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:stress_level:qk]' type='custom-interpolated'>
-              <color-palette custom='true' name='' type='ordered-diverging'>
-                <color>#1d469e</color>
-                <color>#2a50a3</color>
-                <color>#385ba8</color>
-                <color>#4667ae</color>
-                <color>#5673b3</color>
-                <color>#6680b8</color>
-                <color>#778ebe</color>
-                <color>#899bc3</color>
-                <color>#9caac8</color>
-                <color>#afb9ce</color>
-                <color>#c3c8d3</color>
-                <color>#d9d9d9</color>
-                <color>#d1c6c1</color>
-                <color>#cab5aa</color>
-                <color>#c3a495</color>
-                <color>#bc9480</color>
-                <color>#b5856d</color>
-                <color>#ad765b</color>
-                <color>#a6694a</color>
-                <color>#9f5c3a</color>
-                <color>#98502b</color>
-                <color>#91441e</color>
-                <color>#8a3a12</color>
-              </color-palette>
-            </encoding>
-          </style-rule>
-        </style>
-        <panes>
-          <pane id='7' selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Line' />
-            <mark-sizing mark-sizing-setting='marks-scaling-off' />
-            <encodings>
-              <color column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:stress_level:qk]' />
-              <text column='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:stress_category:nk]' />
-            </encodings>
-            <style>
-              <style-rule element='mark'>
-                <format attr='mark-labels-cull' value='true' />
-                <format attr='size' value='1.9890055656433105' />
-                <format attr='mark-markers-mode' value='none' />
-                <format attr='has-stroke' value='true' />
-                <format attr='stroke-color' value='#000000' />
-                <format attr='mark-labels-show' value='true' />
-              </style-rule>
-            </style>
-          </pane>
-        </panes>
-        <rows>[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:memory_test_score:qk]</rows>
-        <cols>[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:cognitive_score:qk]</cols>
-        <show-full-range>
-          <column>[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:Memory Test Score (agrupación):qk]</column>
-        </show-full-range>
-      </table>
-      <simple-id uuid='{36832043-69C0-4466-B80E-11FDCA2C7089}' />
-    </worksheet>
-    <worksheet name='H5-Ejer'>
+    <worksheet name='H6-Ejer'>
       <layout-options>
         <title>
           <formatted-text>
@@ -2801,8 +2855,8 @@
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='700' minheight='700' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='40' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98002' id='39' param='vert' type-v2='layout-flow' w='99034' x='483' y='999' />
+            <zone h='100000' id='46' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98002' id='45' param='vert' type-v2='layout-flow' w='99034' x='483' y='999' />
               <zone-style>
                 <format attr='border-color' value='#000000' />
                 <format attr='border-style' value='none' />
@@ -2820,17 +2874,17 @@
     <window class='worksheet' name='Bonus' tab-color='#17927d'>
       <cards>
         <edge name='left'>
-          <strip size='160'>
+          <strip size='133'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
           </strip>
         </edge>
         <edge name='top'>
-          <strip size='37'>
+          <strip size='31'>
             <card type='columns' />
           </strip>
-          <strip size='37'>
+          <strip size='31'>
             <card type='rows' />
           </strip>
           <strip size='2147483647'>
@@ -2838,7 +2892,7 @@
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='172'>
+          <strip size='143'>
             <card param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:Cognitive Score (agrupación):qk]' show-domain='false' show-null-ctrls='false' type='filter' />
             <card pane-specification-id='1' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:cognitive_category:nk]&#10;[federated.03g3trs11feaie1ahuzvq1tp0woa].[:Measure Names]' type='color' />
           </strip>
@@ -2849,17 +2903,17 @@
     <window class='worksheet' name='Cog-Mem' tab-color='#17927d'>
       <cards>
         <edge name='left'>
-          <strip size='160'>
+          <strip size='133'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
           </strip>
         </edge>
         <edge name='top'>
-          <strip size='36'>
+          <strip size='30'>
             <card type='columns' />
           </strip>
-          <strip size='36'>
+          <strip size='30'>
             <card type='rows' />
           </strip>
           <strip size='2147483647'>
@@ -2867,7 +2921,7 @@
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='173'>
+          <strip size='144'>
             <card pane-specification-id='7' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:cognitive_category:nk]' type='color' />
           </strip>
         </edge>
@@ -2877,17 +2931,17 @@
     <window class='worksheet' name='H1- RtoCafeina' tab-color='#17927d'>
       <cards>
         <edge name='left'>
-          <strip size='160'>
+          <strip size='133'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
           </strip>
         </edge>
         <edge name='top'>
-          <strip size='36'>
+          <strip size='30'>
             <card type='columns' />
           </strip>
-          <strip size='36'>
+          <strip size='30'>
             <card type='rows' />
           </strip>
           <strip size='2147483647'>
@@ -2895,12 +2949,12 @@
           </strip>
         </edge>
         <edge name='bottom'>
-          <strip size='92'>
+          <strip size='76'>
             <card type='caption' />
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='173'>
+          <strip size='144'>
             <card pane-specification-id='13' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:cognitive_score:qk]' type='color' />
             <card pane-specification-id='12' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:memory_test_score:qk]' type='color' />
           </strip>
@@ -2914,30 +2968,30 @@
     <window class='worksheet' name='H1- RtoCafe' tab-color='#17927d'>
       <cards>
         <edge name='left'>
-          <strip size='157'>
+          <strip size='131'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
           </strip>
         </edge>
         <edge name='top'>
-          <strip size='36'>
+          <strip size='30'>
             <card type='columns' />
           </strip>
-          <strip size='36'>
+          <strip size='30'>
             <card type='rows' />
           </strip>
-          <strip size='28'>
+          <strip size='23'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='bottom'>
-          <strip size='92'>
+          <strip size='76'>
             <card type='caption' />
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='174'>
+          <strip size='145'>
             <card pane-specification-id='1' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:cognitive_score:qk]' type='color' />
           </strip>
         </edge>
@@ -2950,25 +3004,25 @@
     <window class='worksheet' name='H1- Gen' tab-color='#17927d'>
       <cards>
         <edge name='left'>
-          <strip size='192'>
+          <strip size='160'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
           </strip>
         </edge>
         <edge name='top'>
-          <strip size='37'>
+          <strip size='31'>
             <card type='columns' />
           </strip>
-          <strip size='37'>
+          <strip size='31'>
             <card type='rows' />
           </strip>
-          <strip size='36'>
+          <strip size='30'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='173'>
+          <strip size='144'>
             <card pane-specification-id='7' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:caffeine_category:nk]' type='color' />
           </strip>
         </edge>
@@ -2978,28 +3032,28 @@
       </viewpoint>
       <simple-id uuid='{EDE147BC-C7C8-4FFF-8CBE-A0E320814DAA}' />
     </window>
-    <window class='worksheet' name='H2-DietEstres' tab-color='#4f779a'>
+    <window class='worksheet' name='H2-DietEstres' tab-color='#a65200'>
       <cards>
         <edge name='left'>
-          <strip size='192'>
+          <strip size='160'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
           </strip>
         </edge>
         <edge name='top'>
-          <strip size='36'>
+          <strip size='2147483647'>
             <card type='columns' />
           </strip>
-          <strip size='36'>
+          <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='36'>
+          <strip size='30'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='172'>
+          <strip size='143'>
             <card pane-specification-id='0' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:stress_category:nk]' type='color' />
             <card pane-specification-id='0' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:caffeine_category:nk]' type='size' />
           </strip>
@@ -3010,142 +3064,115 @@
       </viewpoint>
       <simple-id uuid='{671F02DD-67F5-4305-987F-8B66264F1794}' />
     </window>
-    <window class='worksheet' maximized='true' name='H2- Rto' tab-color='#6e597f'>
+    <window class='worksheet' name='H2' tab-color='#a65200'>
       <cards>
         <edge name='left'>
-          <strip size='192'>
+          <strip size='160'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
           </strip>
         </edge>
         <edge name='top'>
-          <strip size='36'>
+          <strip size='2147483647'>
             <card type='columns' />
           </strip>
-          <strip size='36'>
+          <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='36'>
-            <card type='title' />
-          </strip>
-        </edge>
-      </cards>
-      <viewpoint>
-        <zoom type='entire-view' />
-      </viewpoint>
-      <simple-id uuid='{1825C90F-14E7-47F0-A642-AB6A9B3C2C02}' />
-    </window>
-    <window class='worksheet' name='H2- TR' tab-color='#6e597f'>
-      <cards>
-        <edge name='left'>
-          <strip size='192'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='37'>
-            <card type='columns' />
-          </strip>
-          <strip size='37'>
-            <card type='rows' />
-          </strip>
-          <strip size='37'>
+          <strip size='30'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='174'>
-            <card pane-specification-id='10' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:cognitive_category:nk]' type='color' />
-            <card pane-specification-id='9' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:memory_score_category:nk]' type='color' />
-          </strip>
-        </edge>
-      </cards>
-      <viewpoint>
-        <zoom type='entire-view' />
-      </viewpoint>
-      <simple-id uuid='{84EA49F3-0D50-4EBD-B7C2-2D582F8D83E2}' />
-    </window>
-    <window class='worksheet' name='H2- TRCafe' tab-color='#6e597f'>
-      <cards>
-        <edge name='left'>
-          <strip size='192'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='36'>
-            <card type='columns' />
-          </strip>
-          <strip size='36'>
-            <card type='rows' />
-          </strip>
-          <strip size='36'>
-            <card type='title' />
-          </strip>
-        </edge>
-        <edge name='right'>
-          <strip size='174'>
-            <card pane-specification-id='1' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[:Measure Names]' type='color' />
-          </strip>
-        </edge>
-      </cards>
-      <simple-id uuid='{F2E7AE10-0747-4CDA-90A4-8B281A984054}' />
-    </window>
-    <window class='worksheet' name='H3' tab-color='#a65200'>
-      <cards>
-        <edge name='left'>
-          <strip size='192'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='37'>
-            <card type='columns' />
-          </strip>
-          <strip size='37'>
-            <card type='rows' />
-          </strip>
-          <strip size='36'>
-            <card type='title' />
-          </strip>
-        </edge>
-        <edge name='right'>
-          <strip size='173'>
+          <strip size='144'>
             <card pane-specification-id='2' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:memory_score_category:nk]' type='color' />
           </strip>
         </edge>
       </cards>
       <simple-id uuid='{79DC3384-F3DD-4A16-B82B-1AAAE69644F7}' />
     </window>
-    <window class='worksheet' name='H3-Rto' tab-color='#a65200'>
+    <window class='worksheet' name='H2-Diet-G' tab-color='#a65200'>
       <cards>
         <edge name='left'>
-          <strip size='192'>
+          <strip size='160'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
           </strip>
         </edge>
         <edge name='top'>
-          <strip size='37'>
+          <strip size='2147483647'>
             <card type='columns' />
           </strip>
-          <strip size='37'>
+          <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='36'>
+          <strip size='30'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='172'>
+          <strip size='174'>
+            <card pane-specification-id='4' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:diet_type:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{36948C6C-FAE9-415A-B27C-069A9648BA1D}' />
+    </window>
+    <window class='worksheet' name='H3-DietSueño' tab-color='#4f779a'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card pane-specification-id='4' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:diet_type:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{9ACAF6E3-0662-49CE-A442-3FF927D27E85}' />
+    </window>
+    <window class='worksheet' name='H3-Rto' tab-color='#4f779a'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='143'>
             <card pane-specification-id='2' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:cognitive_category:nk]' type='color' />
             <card pane-specification-id='1' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[:Measure Names]' type='color' />
           </strip>
@@ -3156,148 +3183,7 @@
       </viewpoint>
       <simple-id uuid='{8EC42BD2-E1EA-473C-B9ED-6D7B30D4A44A}' />
     </window>
-    <window class='worksheet' name='H3-Diet-G' tab-color='#a65200'>
-      <cards>
-        <edge name='left'>
-          <strip size='192'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='37'>
-            <card type='columns' />
-          </strip>
-          <strip size='37'>
-            <card type='rows' />
-          </strip>
-          <strip size='36'>
-            <card type='title' />
-          </strip>
-        </edge>
-        <edge name='right'>
-          <strip size='208'>
-            <card pane-specification-id='4' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:diet_type:nk]' type='color' />
-          </strip>
-        </edge>
-      </cards>
-      <simple-id uuid='{36948C6C-FAE9-415A-B27C-069A9648BA1D}' />
-    </window>
-    <window class='worksheet' name='H4-RtoScreen' tab-color='#f66273'>
-      <cards>
-        <edge name='left'>
-          <strip size='192'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='37'>
-            <card type='columns' />
-          </strip>
-          <strip size='37'>
-            <card type='rows' />
-          </strip>
-          <strip size='36'>
-            <card type='title' />
-          </strip>
-        </edge>
-        <edge name='right'>
-          <strip size='320'>
-            <card pane-specification-id='2' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:daily_screen_time:qk]' type='color' />
-          </strip>
-        </edge>
-      </cards>
-      <simple-id uuid='{2AC5BE24-919F-4624-B8CB-AFD9E92454F9}' />
-    </window>
-    <window class='worksheet' name='H4-SueñoScreen' tab-color='#f66273'>
-      <cards>
-        <edge name='left'>
-          <strip size='192'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='36'>
-            <card type='columns' />
-          </strip>
-          <strip size='36'>
-            <card type='rows' />
-          </strip>
-          <strip size='36'>
-            <card type='title' />
-          </strip>
-        </edge>
-        <edge name='right'>
-          <strip size='173'>
-            <card pane-specification-id='2' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:sleep_duration:qk]' type='color' />
-          </strip>
-        </edge>
-      </cards>
-      <simple-id uuid='{598709B7-1504-4EE8-B462-57BC1CD6C78E}' />
-    </window>
-    <window class='worksheet' name='H4-SueñoEstres' tab-color='#f66273'>
-      <cards>
-        <edge name='left'>
-          <strip size='192'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='36'>
-            <card type='columns' />
-          </strip>
-          <strip size='36'>
-            <card type='rows' />
-          </strip>
-          <strip size='36'>
-            <card type='title' />
-          </strip>
-        </edge>
-        <edge name='right'>
-          <strip size='172'>
-            <card pane-specification-id='0' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:stress_category:nk]' type='color' />
-          </strip>
-        </edge>
-      </cards>
-      <viewpoint>
-        <zoom type='entire-view' />
-      </viewpoint>
-      <simple-id uuid='{1C75A4BA-C819-4D96-8EE9-D144B0EF4AF4}' />
-    </window>
-    <window class='worksheet' name='H5-Ejer' tab-color='#dec77b'>
-      <cards>
-        <edge name='left'>
-          <strip size='192'>
-            <card type='pages' />
-            <card type='filters' />
-            <card type='marks' />
-          </strip>
-        </edge>
-        <edge name='top'>
-          <strip size='36'>
-            <card type='columns' />
-          </strip>
-          <strip size='36'>
-            <card type='rows' />
-          </strip>
-          <strip size='36'>
-            <card type='title' />
-          </strip>
-        </edge>
-      </cards>
-      <viewpoint>
-        <zoom type='entire-view' />
-      </viewpoint>
-      <simple-id uuid='{DD3F554D-BAE6-4B3E-A4AD-8C3C4EBCE06A}' />
-    </window>
-    <window class='worksheet' name='H5 EstresRto' tab-color='#dec77b'>
+    <window class='worksheet' name='H3-SueñoScreen' tab-color='#4f779a'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -3307,23 +3193,133 @@
           </strip>
         </edge>
         <edge name='top'>
-          <strip size='36'>
+          <strip size='2147483647'>
             <card type='columns' />
           </strip>
-          <strip size='36'>
+          <strip size='2147483647'>
             <card type='rows' />
           </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card pane-specification-id='5' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:cognitive_score:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{598709B7-1504-4EE8-B462-57BC1CD6C78E}' />
+    </window>
+    <window class='worksheet' name='H4-RtoScreen' tab-color='#f66273'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
           <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='266'>
+            <card pane-specification-id='2' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:daily_screen_time:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{2AC5BE24-919F-4624-B8CB-AFD9E92454F9}' />
+    </window>
+    <window class='worksheet' name='H4-EstresScreen' tab-color='#f66273'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='174'>
+            <card pane-specification-id='2' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[med:daily_screen_time:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8E2E8411-49C5-4A23-B11A-4B1C040F26B5}' />
+    </window>
+    <window class='worksheet' name='H4-EstresRto' tab-color='#f66273'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{1825C90F-14E7-47F0-A642-AB6A9B3C2C02}' />
+    </window>
+    <window class='worksheet' name='H4-2EstresRto' tab-color='#f66273'>
+      <cards>
+        <edge name='left'>
+          <strip size='133'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='25'>
             <card type='title' />
           </strip>
         </edge>
         <edge name='bottom'>
-          <strip size='92'>
+          <strip size='76'>
             <card type='caption' />
           </strip>
         </edge>
         <edge name='right'>
-          <strip size='172'>
+          <strip size='143'>
             <card pane-specification-id='7' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:stress_level:qk]' type='color' />
           </strip>
         </edge>
@@ -3332,6 +3328,92 @@
         <zoom type='entire-view' />
       </viewpoint>
       <simple-id uuid='{984787B5-E74A-4BCD-89F6-25447060C6BE}' />
+    </window>
+    <window class='worksheet' name='H5- TR' tab-color='#72bcbb'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='143'>
+            <card pane-specification-id='10' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:cognitive_category:nk]' type='color' />
+            <card pane-specification-id='9' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[none:memory_score_category:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{84EA49F3-0D50-4EBD-B7C2-2D582F8D83E2}' />
+    </window>
+    <window class='worksheet' maximized='true' name='H5- TRCafe' tab-color='#72bcbb'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='30'>
+            <card type='columns' />
+          </strip>
+          <strip size='30'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='144'>
+            <card pane-specification-id='1' param='[federated.03g3trs11feaie1ahuzvq1tp0woa].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F2E7AE10-0747-4CDA-90A4-8B281A984054}' />
+    </window>
+    <window class='worksheet' name='H6-Ejer' tab-color='#dec77b'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{DD3F554D-BAE6-4B3E-A4AD-8C3C4EBCE06A}' />
     </window>
     <window class='dashboard' name='Dashboard 1'>
       <viewpoints />
