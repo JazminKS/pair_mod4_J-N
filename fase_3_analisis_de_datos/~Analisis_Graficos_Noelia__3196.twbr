@@ -4024,7 +4024,7 @@
       <active id='4' />
       <simple-id uuid='{E1274733-175C-4648-BF83-37C342C4BEF0}' />
     </window>
-    <window class='worksheet' name='Bonus' tab-color='#17927d'>
+    <window class='worksheet' maximized='true' name='Bonus' tab-color='#17927d'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -4136,7 +4136,7 @@
       <active id='-1' />
       <simple-id uuid='{16689EAD-F95F-42D9-95FE-754384DD5850}' />
     </window>
-    <window class='worksheet' maximized='true' name='H1- RtoCafe' tab-color='#17927d'>
+    <window class='worksheet' name='H1- RtoCafe' tab-color='#17927d'>
       <cards>
         <edge name='left'>
           <strip size='156'>
