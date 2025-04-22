@@ -191,15 +191,26 @@ Para comprender mejor la observación de las gráficas estadísticas hemos clasi
 
 3.  **Análisis Bivariado y Multivariado:** Investigar las relaciones entre pares y grupos de variables. Por ejemplo, ¿cómo se relaciona la edad con la duración del sueño y el rendimiento de la memoria? ¿Hay diferencias en el rendimiento cognitivo entre diferentes tipos de dieta y niveles de ejercicio?
 
-**¿En qué área te gustaría enfocarte primero para el análisis? Por ejemplo, ¿te interesa explorar la relación entre el sueño y el rendimiento cognitivo, o la distribución de las edades en el dataset?** Una vez que me digas tu área de interés, puedo ayudarte a generar el código y a interpretar los resultados.
 
 
 Podemos formular algunas hipótesis y pensar en las relaciones esenciales a analizar para llegar a conclusiones interesantes. Aquí te presento algunas hipótesis y las mejores gráficas para explorarlas:
 
   **Posibles Hipótesis y Relaciones Esenciales a Analizar:**
-  
 
-## Hipótesis 1 sobre la ingesta de cafeína:
+Relación positiva entre rendimiento de memoria y cognitivo global.
+Hemos encontrado una correlación positiva entre el rendimiento medio de las pruebas cognitivas y el de las pruebas de memoria. Así, a mayor rendimiento en memoria mayor rendimiento en las pruebas cognitivas, y viceversa.
+
+
+  
+Hipótesis 1 sobre ingesta de cafeína: ¿A mayor consumo de café menor deterioro cognitivo?
+Hipótesis 2  sobre el nivel de estrés: ¿Varía según el género? ¿A mayor estrés mayor deterioro del rendimiento cognitivo?
+Hipótesis 3 sobre las horas de sueño: ¿Varía entre generaciones? ¿A más horas de sueño mayor rendimiento cognitivo y mayor memoria?
+Hipótesis 4 sobre el tiempo en pantalla: ¿Un mayor tiempo en pantalla diario se asocia con niveles de estrés más altos y menor duración del sueño, por lo tanto, un mayor deterioro de las capacidades cognitivas?
+Hipótesis 5 sobre la frecuencia de ejercicio: ¿Una mayor frecuencia de ejercicio se asocia con menor estrés y mejor rendimiento cognitivo?
+
+## Hipótesis 1 sobre la ingesta de cafeína: ¿Más afeina, mejor mente? “El café puede ser nuestro motor por la mañana, pero en exceso se convierte en un amplificador de estrés.”
+
+
    *Los estudios realizados han mostrado que el consumo moderado de café está asociado con un menor riesgo de deterioro cognitivo, osteoporosis, diabetes y enfermedades neurodegenerativas como el Alzheimer y el Parkinson. La cafeína, como principal compuesto activo del café, parece tener un efecto protector sobre la memoria y la atención.
     El consumo de café podría estar relacionado con la salud, por ejemplo, la pérdida de demencia es menor en personas que han tenido una ingesta moderada y regular. También se ha desprendido del estudio que un exceso en la ingesta de esta bebida tiene consecuencias negativas para la salud. El café en una medida razonable tiene efectos antioxidantes e inflamatorios para ayudar a proteger nuestro cerebro.
     Fuente 2: https://www.sabervivirtv.com/nutricion/cuanta-cafeina-tiene-un-cafe-depende-de-como-lo-prepares_11344
@@ -218,8 +229,47 @@ Podemos formular algunas hipótesis y pensar en las relaciones esenciales a anal
         🔹 Variables:
         caffeine_intake o caffeine_category
         cognitive_score o cognitive_score_category
+Hemos comprobado la diferencia de consumo de cafeína por generación, parece que cada generación sigue el mismo patrón de consumo, la generación X de 45 a 60 años se diferencia por un 1% en consumir menos café, lo cual no es significativo en el análisis, pero sí hemos observado en los participantes que es más común el consumo moderado de cafeína, es decir, de 81 a 200 mg, lo que serían 1 o 2 tazas de café diarias.
 
-## Hipótesis 2 sobre las horas de sueño:
+Se puede observar que cuando se consume más cafeína el rendimiento cognitivo baja. Sin embargo, no ocurre así con los resultados de la prueba de memoria, se mantiene una tendencia estable.
+
+
+  Tras relacionar los factores cognitivos y el consumo de cafeína hemos podido observar que cuando el nivel de cafeina de los participantes alcanza casi los 450 mg encontramos más participantes con un rendimiento cognitivo medio y bajo. 450 mg serían 6 tazas y media de café diarias. Sin embargo cuando el consumo de cafeína se encuentra entre 100 y 200 mg (alrededor de 2 tazas) el rendimiento cognitivo suele ser más alto. A partir de los 150 mg es más común el rendimiento cognitivo bajo.
+
+Respecto a los resultados de la relación entre el nivel de estrés y el consumo de cafeína podemos observar que a mayor estrés más se deteriora el rendimiento cognitivo así como cuando se consumen grandes cantidad de cafeína observamos que la puntuación cognitiva es más baja. Por tanto, ¿se cumple la hipótesis? No, consumir grandes cantidades de café no mejora las capacidades cognitivas, genera mayor estrés y deterioraría las capacidades cognitivas.: “El café puede ser nuestro motor por la mañana, pero en exceso se convierte en un amplificador de estrés.”
+
+- Hallazgos clave:
+
+Mejores rendimientos con consumo moderado (100–200 mg).
+Exceso (>400 mg) → más estrés, menor rendimiento.
+
+“No es la cafeína lo que nos enfoca, es la dosis lo que importa.”
+
+## Hipótesis 2 sobre el estrés:  ¿A más estrés, peor rendimiento?¿Estrés varía por género o dieta? 
+
+    ·stress_level vs. generation
+    ·stress_level vs. diet_type
+    ·stress_level vs. caffeine_intake 
+
+Efectivamente, podemos observar en el gráfico que concretamiente el rendimiento cognitivo disminuye a medida que se siente más estrés. No ocurre lo mismo con la memoria, se mantiene una tendencia estable.
+
+Esta gráfica muestra la relación entre dieta, consumo de cafeína y nivel de estrés, utilizando la mediana del nivel de estrés como métrica principal, diferenciada por colores según categoría de estrés (bajo, medio y alto).
+El estrés alto y bajo se mantienen constantes independientemente de la dieta o cafeína:
+Las líneas verde (estrés alto) y roja (estrés bajo) son estables en todos los tipos de dieta (no vegetariana, vegetariana y vegana). Esto indica que las personas con niveles altos y bajos de estrés tienden a mantenerse en esos niveles, sin que el tipo de dieta o la cantidad de cafeína genere una variación significativa.
+El estrés medio muestra más variación en vegetarianos y veganos:
+El grupo no vegetariano se estresa más a medida que consume cafeína, el grupo vegano tiende a estresarse más sólo si consume demasiada cafeína mientras que el grupo vegetariano es más inestable.
+
+“El estrés no solo cansa: borra la memoria, nubla la mente y nos hace más lentos.”
+
+
+Hallazgos:
+
+Alta correlación entre estrés y bajo rendimiento cognitivo.
+
+Estrés medio es más volátil entre vegetarianos y veganos.
+“Controlar el estrés no es opcional. Es esencial para pensar mejor.”
+
+## Hipótesis 3 sobre las horas de sueño: ¿Dormir más = rendir mejor? “Dormir no es perder tiempo, es ganar claridad.”
     Hipótesis: La duración del sueño varía significativamente entre diferentes generaciones y se relaciona con el rendimiento cognitivo y la memoria.
      Relaciones a analizar:
        ·sleep_duration vs. generation
@@ -227,7 +277,12 @@ Podemos formular algunas hipótesis y pensar en las relaciones esenciales a anal
        ·sleep_duration vs. memory_test_score (por generación)
     Varía por edad, dieta o género? ¿A más horas de sueño, mayor rendimiento cognitivo y mejor memoria?
 
+Las gráficas nos muestran una leve correlación positiva entre las horas de sueño y el rendimiento cognitivo. Observamos picos no predominantes en la tendencia que abría que estudiar más a fondo.
+Entonces, hallamos:
 
+Similitud General en la duración del sueño: A primera vista, parece haber una similitud general en la duración promedio del sueño (alrededor de 7 horas)  Sabiendo esto hemos descubierto que el rendimiento cognitivo sí se ve influenciado por las horas de sueño.
+Las puntuaciones medias se relacionan en su mayoría con horas de sueño en un rango de 6,5 a 7,5 horas aproximadamente.
+Hemos podido observar la tendencia de los participantes a mejorar la capacidad cognitiva a medida que las horas de sueño son mayores.
     - Resultados:
        ·Similitud General en la Duración del Sueño: A primera vista, parece haber una similitud general en la duración promedio del sueño (alrededor de 7 horas)  Sabiendo esto hemos descubierto que el rendimiento cognitivo sí se ve influenciado por las horas de sueño. 
        
@@ -244,67 +299,26 @@ Podemos formular algunas hipótesis y pensar en las relaciones esenciales a anal
     Con estos resultados podemos concluir que la la dieta influye en las horas de sueño en la muestra analizada, y las horas de sueño se relacionan con el rendimiento cognitivo. Así, los participantes que duermen de 7 a 7 horas y media de promedio son los que mejor rinden en las pruebas, teniendo en cuenta que existe valores muy extremos que también consiguen los resultados, lo cual sería interesante analizar.
     Sin embargo, el rendimiento bajo se relaciona con el grupo de participantes con las horas de sueño más dispersas entre sí, siendo la media de 6 horas y media aproximadamente.
 
-## Hipótesis 3 sobre el Estrés:
+    NEXT STEPS: Estudio de género Other en profundidad, pues sus datos se diferencian a los de los otros géneros, son más inestables.
 
-Hipótesis: Los niveles de estrés varían entre las categorías de género y se relacionan negativamente con el rendimiento cognitivo.
-    Relaciones a analizar:
-       ·stress_category vs. gender (ver si hay una distribución diferente de niveles de estrés entre géneros).
-       ·stress_level vs. cognitive_score (separado por género si es relevante).
-        Gráficas representativas:
-          - Count Plots (con hue): Para visualizar la distribución de stress_category para cada gender.
-          - Stacked Bar Charts: Para mostrar la proporción de cada stress_category dentro de cada gender.
-          - Boxplots o Violin Plots: Para comparar la distribución de cognitive_score entre las diferentes categorías de stress_category.
+## Hipótesis 5  ¿Más ejercicio = menos estrés y mejor rendimiento? 
+· exercise_frequency v stress_level
+“El ejercicio físico es el gran protector de nuestra mente: donde hay movimiento, hay foco.”
+Personas con ejercicio frecuente → menor estrés, mejor puntuación cognitiva y mejor memoria.
+Incluso en niveles altos de estrés, quienes se ejercitan tienen mejores resultados que quienes no lo hacen.
 
 
-    - Resultados:
-    ·Los niveles promedio de rendimiento cognitivo no bajan claramente con el aumento del estrés: 
-    Curiosamente, el grupo con estrés medio (Medium) tiene los puntajes cognitivos más altos en todas las categorías de género.
-
-     El grupo con estrés alto (High) tiene valores ligeramente más bajos, pero no dramáticamente.
-
-     El grupo con estrés bajo (Low) también tiene valores más bajos que el medio, lo cual va en contra de la hipótesis común de que menos estrés = mejor rendimiento.
-
-    ·Diferencias por género
-    En los tres niveles de estrés, los valores promedio por género son similares, con una ligera ventaja para:
-
-    Mujeres (Female) y hombres (Male) en estrés medio.
-
-    El grupo “Other” es más pequeño, pero destaca que los participantes con estrés medio o alto 
+Hallazgos:
+Más ejercicio = mejor rendimiento, incluso en personas con estrés alto.
 
 
-
-## Hipótesis 4 sobre el Tiempo de Pantalla y el Ejercicio:
-
- Hipótesis: Un mayor tiempo de pantalla diario se asocia con niveles de estrés más altos y menor duración del sueño. Esto indica un mayor deterioro de las capacidades cognitivas y su rendimiento.
-       ·daily_screen_time vs. stress_category
-       ·daily_screen_time vs. sleep_duration
-                        vs. cognitive_score
-                        vs. memory
-    Gráficas representativas:
-          - Boxplots o Violin Plots: Para comparar la distribución de stress_level o sleep_duration entre diferentes rangos de daily_screen_time (podrías categorizar daily_screen_time si es necesario).
-          - Boxplots o Violin Plots: Para comparar la distribución de stress_level o cognitive_score entre las diferentes categorías de exercise_frequency.
-
-##  Hipótesis 5 sobre la Frecuecia de Ejercicio:
-
-Hipótesis: La mayor frecuencia de ejercicio se asocia con menor estrés y mejor rendimiento cognitivo.
-    Gráficas representativas:
-          - Histograma
-
-
-    - Resultados:
-
-## Hipótesis 6 sobre la Dieta:
-
-Hipótesis: El tipo de dieta se asocia con diferentes niveles de ingesta de cafeína y puede influir en el rendimiento cognitivo.
-    Relaciones a analizar:
-           ·caffeine_category vs. diet_type (ver si hay patrones de consumo de cafeína diferentes según la dieta).
-           ·diet_type vs. cognitive_score.
-        Gráficas representativas:
-          - Count Plots (con hue): Para visualizar la distribución de caffeine_category para cada diet_type.
-          - Stacked Bar Charts: Para mostrar la proporción de cada caffeine_category dentro de cada diet_type.
-          - Boxplots o Violin Plots: Para comparar la distribución de cognitive_score entre los diferentes tipos de diet_type.
-
-
-    - Resultados:
 
 *Multivariedad: Las relaciones entre variables pueden ser complejas y estar influenciadas por otras variables. Consideramos la posibilidad de realizar análisis multivariados más adelante si encuentras relaciones interesantes a nivel bivariado.*
+
+# Conclusiones
+
+
+🟥 El rendimiento mental, reflejo de todo lo anterior
+“La memoria, el tiempo de reacción y el rendimiento cognitivo no son accidentales: son reflejo de lo que hacemos cada día.”
+Alta correlación entre cognitive score, memory test score y reaction time.
+El perfil de quienes tienen mejor rendimiento cognitivo: sueño medio, poco estrés, ejercicio frecuente, dieta equilibrada, sin abusar de carnes, consumo moderado-bajo de cafeína y bajo tiempo en pantalla.
