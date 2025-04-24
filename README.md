@@ -2,6 +2,10 @@
 
 Este proyecto explora la relación entre diversos hábitos diarios y el rendimiento cognitivo, utilizando datos de 80,000 participantes que se sometieron a pruebas cognitivas y proporcionaron información sobre su estilo de vida.
 
+[Enlace a las visualizaciones de EDA](https://public.tableau.com/app/profile/jazmin.sanchez8559/viz/EDA-Graficos_17450477382830/DashboardPortada)
+
+[Enlace al análisis completo](https://public.tableau.com/app/profile/jazmin.sanchez8559/viz/Analisis_Cognitivo_Habitos_17453145840610/Presentacin?publish=yes)
+
 ## 1. Nuestra base de datos
 
 El conjunto de datos utilizado en este análisis proviene de 80,000 voluntarios que participaron en pruebas cognitivas. La selección y el análisis de las variables se basó en la experiencia de Jazmín en el sector alimentario y de la salud, y el conocimiento de Noelia en la aplicación de tests psicológicos. Las pruebas cognitivas se dividieron en dos categorías principales:
